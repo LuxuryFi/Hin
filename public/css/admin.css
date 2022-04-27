@@ -1,0 +1,84 @@
+html, body {
+    height: 100%;
+}
+
+.header {
+    height: 100px;
+    margin: 0px 0px;
+    background-color: #3C8DBC;
+}
+
+.main {
+    color: #ffffff;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.logo h2 {
+    padding: 20px;
+    color: #fff;
+}
+
+.navbar {
+    flex: 1;
+    background-color: #222D32;
+}
+
+.nav-item {
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1vmax;
+}
+
+
+.content {
+    color: #000;
+    flex: 9;
+}
+
+.c-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content table {
+    font-size: 1vmax;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .content {
+        flex: 10;
+    }
+
+    .header {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .content {
+        flex: 12;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        flex: 14;
+    }
+}
+
+
+
+
+
+/* .content table th,th,td {
+    color: #ffffff;
+} */

@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Create
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.important {
+			color: #336699;
+		}
+	</style>
+
+{% endblock %}
+{% block body %}
+		  <div class="container-fluid mt-3">
+      <h2 class="text-center mt-5 alert alert-primary">CREATE COURSE</h2>
+      <div class="col-md-6"></div>
+          {{ form_start (form) }}
+              <div class="form-group">
+                  {{ form_label (form.course_name) }}
+                  {{ form_widget (form.course_name, {'attr': {'class' : 'form-control'}}) }}
+              </div>
+              <div class="form-group">
+                  {{ form_label (form.course_description) }}
+                  {{ form_widget (form.course_description, {'attr': {'class' : 'form-control'}}) }}
+              </div>
+			  	<div class="mb-3">
+					<input type="submit" value="Submit" class="btn btn-primary">
+					<input type="reset" value="Clear" class="btn btn-danger">
+					<a href="/course/index" class="btn btn-secondary">Back To Home</a>
+				</div>
+          {{ form_end (form)}}
+  </div>
+
+{% endblock %}

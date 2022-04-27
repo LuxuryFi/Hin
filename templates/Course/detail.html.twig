@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Create
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.important {
+			color: #336699;
+		}
+	</style>
+
+{% endblock %}
+{% block body %}
+
+<h2 class="text-center mt-5 alert alert-primary">DETAIL COURSE</h2>
+
+<a href="/course/update/{{course.getId()}}"> <i class="fa fa-pencil"></i> </a>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Course Name</td>
+        <td> {{course.getCourseName}} </td>
+    </tr>
+    <tr>
+        <td>Course Description</td>
+        <td>{{course.getCourseDescription}}</td>
+    </tr>
+</table>
+    <a href="/course/update/{{ course.getId()}}" class="btn btn-primary">Update course</a>
+    <a href="/course/index" class="btn btn-secondary">Back To Home</a>
+{% endblock %}

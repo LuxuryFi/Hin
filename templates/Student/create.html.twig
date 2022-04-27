@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Create
+{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="container-fluid mt-3">
+    <h2 class="text-center mt-5 alert alert-primary">CREATE CATEGORY</h2>
+
+    <div class="col-md-6"></div>
+    {{ form_start (form) }}
+    <div class="form-group">
+        {{ form_label (form.student_name) }}
+        {{ form_widget (form.student_name, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.student_description) }}
+        {{ form_widget (form.student_description, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.student_summary) }}
+        {{ form_widget (form.student_summary, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+        <div class="form-group">
+        {{ form_label (form.student_gender) }}
+        {{ form_widget (form.student_gender, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.student_status) }}
+        {{ form_widget (form.student_status, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.major) }}
+        {{ form_widget (form.major, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group text-center mt-3">
+        <button class="btn btn-primary btn-lg">CREATE</button>
+    </div>
+    {{ form_end (form)}}
+</div>
+
+{% endblock %}

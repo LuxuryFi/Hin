@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Index
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	{# <style type="text/css">
+		.important {
+			color: #336699;
+		}
+	</style> #}
+{% endblock %}
+{% block body %}
+	<center> <h2 class="alert alert-primary"> Student List</h2> </center>
+	<a href="/student/create" class="btn btn-primary">Add Student</a> <br><br>
+	<table class="table">
+		<tr>
+			<th class="thead-dark">Name</th>
+			<th class="thead-dark">Description</th>
+			<th class="thead-dark">Summary</th>
+			<th class="thead-dark">Major</th>
+			<th class="thead-dark">Status</th>
+			<th class="thead-dark">Gender</th>
+			<th class="thead-dark">Option</th>
+		</tr>
+		{% for student in students %}
+			<tr>
+				<td>{{ student.getStudentName() }}</td>
+				<td>{{ student.getStudentDescription() }}</td>
+				<td>{{ student.getStudentSummary() }}</td>
+				<td>{{ student.getMajor.getMajorName}} </td>
+				<td>
+					{% if student.getStudentStatus() == 0 %}
+						Disable
+					{% else %}
+						Active
+					{% endif %}
+				</td>
+				<td>
+					{% if student.getStudentGender() == 0 %}
+						Female
+					{% else %}
+						Male
+					{% endif %}
+				</td>
+				<td>
+					<center>
+						<a href="/student/update/{{student.getId()}}"> <i class="fa fa-pen"></i> </a>
+						<a href="/student/detail/{{student.getId()}}"> <i class="fa fa-eye"></i> </a>
+						<a href="/student/delete/{{student.getId()}}" onclick="Confirm('You sua')"> <i class="fa fa-trash" ></i> </a>
+					</center>
+				</td>
+			</tr>
+        	{% endfor %}
+		</table>
+{% endblock %}
