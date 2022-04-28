@@ -36,6 +36,12 @@ services:
         calls:
             - [setContainer, ['@Psr\Container\ContainerInterface']]
 
+    teacher_controller:
+        class: 'App\Controller\TeacherController'
+        tags: ['controller.service_arguments', 'controller.service_subscriber']
+        calls:
+            - [setContainer, ['@Psr\Container\ContainerInterface']]
+
     course_controller:
         class: 'App\Controller\CourseController'
         tags: ['controller.service_arguments', 'controller.service_subscriber']

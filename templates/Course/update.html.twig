@@ -10,19 +10,27 @@
 
 {% endblock %}
 {% block body %}
-		  <div course="container-fluid mt-3">
+		  <div class="container-fluid mt-3">
       <h2 class="text-center mt-5 alert alert-primary">UPDATE COURSE</h2>
       <div class="col-md-6"></div>
           {{ form_start (form) }}
-              <div course="form-group">
+              <div class="form-group">
                   {{ form_label (form.course_name) }}
                   {{ form_widget (form.course_name, {'attr': {'class' : 'form-control'}}) }}
               </div>
-              <div course="form-group">
+              <div class="form-group">
                   {{ form_label (form.course_description) }}
                   {{ form_widget (form.course_description, {'attr': {'class' : 'form-control'}}) }}
               </div>
-			  	<div course="mb-3">
+                <div class="form-group">
+                    {{ form_label (form.subject) }}
+                    {{ form_widget (form.subject, {'attr': {'class' : 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.teacher) }}
+                    {{ form_widget (form.teacher, {'attr': {'class' : 'form-control'}}) }}
+                </div>
+			  	<div class="mb-3">
 					<input type="submit" value="Submit" class="btn btn-primary">
 					<input type="reset" value="Clear" class="btn btn-danger">
 					<a href="/course/index" class="btn btn-secondary">Back To Home</a>

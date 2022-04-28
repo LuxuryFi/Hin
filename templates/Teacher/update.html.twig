@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Create
+{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="container-fluid mt-3">
+    <h2 class="text-center mt-5 alert alert-primary">UPDATE TEACHER</h2>
+    <div class="col-md-6"></div>
+    {{ form_start (form) }}
+    <div class="form-group">
+        {{ form_label (form.teacher_name) }}
+        {{ form_widget (form.teacher_name, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.teacher_description) }}
+        {{ form_widget (form.teacher_description, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.teacher_summary) }}
+        {{ form_widget (form.teacher_summary, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.teacher_price) }}
+        {{ form_widget (form.teacher_price, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.teacher_amount) }}
+        {{ form_widget (form.teacher_amount, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.teacher_status) }}
+        {{ form_widget (form.teacher_status, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label (form.major) }}
+        {{ form_widget (form.major, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+      <div class="form-group">
+        {{ form_label (form.avatar) }}
+        {{ form_widget (form.avatar, {'attr': {'class' : 'form-control'}}) }}
+    </div>
+    <div class="form-group text-center mt-3">
+        <button class="btn btn-primary btn-lg">UPDATE</button>
+    </div>
+    {{ form_end (form)}}
+</div>
+
+{% endblock %}

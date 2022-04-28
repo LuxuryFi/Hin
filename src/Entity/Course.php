@@ -30,22 +30,58 @@ class Course
     private $course_description;
 
 
-       /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Student", mappedBy="course", cascade={"remove"})
+        /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Teacher", inversedBy="courses")
      */
-    private $students;
+    private $teacher;
+
+    public function getTeacher(): ?Teacher
+    {
+        return $this->teacher;
+    }
+
+    public function setTeacher(?Teacher $teacher): self
+    {
+        $this->teacher = $teacher;
+
+        return $this;
+    }
+
+
+   /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Enrollment", mappedBy="course", cascade={"remove"})
+     */
+    private $enrollments;
 
     public function __construct()
     {
-        $this->students = new ArrayCollection();
+        $this->enrollments = new ArrayCollection();
     }
 
     /**
-     * @return Collection|Student[]
+     * @return Collection|Enrollment[]
      */
-    public function getStudents(): Collection
+    public function getEnrollment(): Collection
     {
-        return $this->students;
+        return $this->enrollments;
+    }
+    
+
+        /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Subject", inversedBy="courses")
+     */
+    private $subject;
+
+    public function getSubject(): ?Subject
+    {
+        return $this->subject;
+    }
+
+    public function setSubject(?Subject $subject): self
+    {
+        $this->subject = $subject;
+
+        return $this;
     }
 
     public function getId(): ?int

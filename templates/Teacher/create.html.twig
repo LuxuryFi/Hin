@@ -15,29 +15,29 @@
 {% endblock %}
 {% block body %}
 <div class="container-fluid mt-3">
-    <h2 class="text-center mt-5 alert alert-primary">CREATE STUDENT</h2>
+    <h2 class="text-center mt-5 alert alert-primary">CREATE TEACHER</h2>
 
     <div class="col-md-6"></div>
     {{ form_start (form) }}
     <div class="form-group">
-        {{ form_label (form.student_name) }}
-        {{ form_widget (form.student_name, {'attr': {'class' : 'form-control'}}) }}
+        {{ form_label (form.teacher_name) }}
+        {{ form_widget (form.teacher_name, {'attr': {'class' : 'form-control'}}) }}
     </div>
     <div class="form-group">
-        {{ form_label (form.student_description) }}
-        {{ form_widget (form.student_description, {'attr': {'class' : 'form-control'}}) }}
+        {{ form_label (form.teacher_description) }}
+        {{ form_widget (form.teacher_description, {'attr': {'class' : 'form-control'}}) }}
     </div>
     <div class="form-group">
-        {{ form_label (form.student_summary) }}
-        {{ form_widget (form.student_summary, {'attr': {'class' : 'form-control'}}) }}
+        {{ form_label (form.teacher_summary) }}
+        {{ form_widget (form.teacher_summary, {'attr': {'class' : 'form-control'}}) }}
     </div>
         <div class="form-group">
-        {{ form_label (form.student_gender) }}
-        {{ form_widget (form.student_gender, {'attr': {'class' : 'form-control'}}) }}
+        {{ form_label (form.teacher_gender) }}
+        {{ form_widget (form.teacher_gender, {'attr': {'class' : 'form-control'}}) }}
     </div>
     <div class="form-group">
-        {{ form_label (form.student_status) }}
-        {{ form_widget (form.student_status, {'attr': {'class' : 'form-control'}}) }}
+        {{ form_label (form.teacher_status) }}
+        {{ form_widget (form.teacher_status, {'attr': {'class' : 'form-control'}}) }}
     </div>
     <div class="form-group">
         {{ form_label (form.major) }}

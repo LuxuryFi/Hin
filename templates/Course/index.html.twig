@@ -18,12 +18,16 @@
 		<tr>
 			<th>Name</th>
 			<th>Description</th>
+			<th>Subject</th>
+			<th>Teacher</th>
 			<th>Option</th>
 		</tr>
-		{% for course in categories %}
+		{% for course in courses %}
 			<tr>
 				<td>{{ course.getCourseName() }}</td>
 				<td>{{ course.getCourseDescription() }}</td>
+				<td>{{ course.getSubject.getSubjectName}} </td>
+				<td>{{ course.getTeacher.getTeacherName}} </td>
 				<td>
 					<a href="/course/update/{{course.getId()}}"> <i class="fa fa-pen"></i> </a>
 					<a href="/course/detail/{{course.getId()}}"> <i class="fa fa-eye"></i> </a>

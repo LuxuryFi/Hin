@@ -45,6 +45,25 @@ class Student
     private $student_status;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Enrollment", mappedBy="student", cascade={"remove"})
+     */
+    private $enrollments;
+
+    public function __construct()
+    {
+        $this->enrollments = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|Enrollment[]
+     */
+    public function getEnrollment(): Collection
+    {
+        return $this->enrollments;
+    }
+    
+
 
       /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Major", inversedBy="students")

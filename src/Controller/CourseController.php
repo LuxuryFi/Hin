@@ -46,9 +46,9 @@ class CourseController extends AbstractController
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $categories = $entityManager->getRepository(course::class)->findAll();
+        $courses = $entityManager->getRepository(course::class)->findAll();
         return $this->render('course/index.html.twig', [
-            'categories' => $categories,
+            'courses' => $courses,
         ]);
     }
 

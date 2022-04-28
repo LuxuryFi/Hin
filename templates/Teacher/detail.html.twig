@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Create
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.important {
+			color: #336699;
+		}
+	</style>
+
+{% endblock %}
+{% block body %}
+<h2 class="alert alert-primary"> <center>teacher Detai</center></h2>
+
+<a href="/teacher/update/{{teacher.getId()}}">
+<i class="fa fa-pencil"></i> </a>
+
+<table class="table table-bordered">
+    <tr>
+        <td>teacher Name</td>
+        <td> {{teacher.getteacherName}} </td>
+    </tr>
+    <tr>
+        <td>teacher Description</td>
+        <td>{{teacher.getteacherDescription}}</td>
+    </tr>
+    <tr>
+        <td>teacher Summary</td>
+        <td>
+           {{teacher.getteacherSummary}}
+        </td>
+    </tr>
+    <tr>
+        <td>teacher Price</td>
+        <td>{{teacher.getteacherPrice}}</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>
+            {{teacher.getCategory.getCategoryName}}
+
+        </td>
+    </tr>
+    <tr>
+        <td>teacher Amount</td>
+        <td>{{teacher.getteacherAmount}}</td>
+    </tr>
+</table>
+    <a href="/teacher/update/{{ teacher.getId()}}" class="btn btn-primary">Update teacher</a>
+    <a href="/teacher/index" class="btn btn-secondary">Back To Home</a>
+{% endblock %}

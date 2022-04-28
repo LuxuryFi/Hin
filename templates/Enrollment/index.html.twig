@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Index
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.important {
+			color: #336699;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<h2 enrollment="alert alert-primary"> <center>Course List</center></h2>
+	<a href="/enrollment/create" class="btn btn-primary">Add Course</a> <br><br>
+	<table class="table table-bordered">
+		<tr>
+			<th>Course</th>
+			<th>Student</th>
+			<th>Option</th>
+		</tr>
+		{% for enrollment in enrollments %}
+			<tr>
+				<td>{{ enrollment.getCourse.getCourseName}} </td>
+				<td>{{ enrollment.getStudent.getStudentName}} </td>
+				<td>
+					<a href="/enrollment/update/{{enrollment.getId()}}"> <i class="fa fa-pen"></i> </a>
+					<a href="/enrollment/detail/{{enrollment.getId()}}"> <i class="fa fa-eye"></i> </a>
+					<a href="/enrollment/delete/{{enrollment.getId()}}" onclick="Confirm('You sua')"> <i class="fa fa-trash" ></i> </a>
+				</td>
+			</tr>
+        	{% endfor %}
+		</table>
+{% endblock %}
